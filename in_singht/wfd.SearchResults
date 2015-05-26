@@ -1,0 +1,1096 @@
+---- -&gt; Matches (703 in 13 files) ----
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    mSession-&gt;threadLoop();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        sp&lt;AMessage&gt; msg = mNotify-&gt;dup();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        msg-&gt;setInt32(&quot;sessionID&quot;, mSessionID);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        msg-&gt;setInt32(&quot;reason&quot;, kWhatClientConnected);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        msg-&gt;setString(&quot;server-ip&quot;, localAddrString.c_str());
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        msg-&gt;setInt32(&quot;server-port&quot;, ntohs(localAddr.sin_port));
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        msg-&gt;setString(&quot;client-ip&quot;, remoteAddrString.c_str());
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        msg-&gt;setInt32(&quot;client-port&quot;, ntohs(remoteAddr.sin_port));
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        msg-&gt;post();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                        mSocket, buf-&gt;data(), buf-&gt;capacity(), 0,
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                buf-&gt;setRange(0, n);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                buf-&gt;meta()-&gt;setInt64(&quot;arrivalTimeUs&quot;, nowUs);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;setInt32(&quot;sessionID&quot;, mSessionID);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;setInt32(&quot;reason&quot;, kWhatDatagram);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;setString(
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;setInt32(&quot;fromPort&quot;, ntohs(remoteAddr.sin_port));
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;setBuffer(&quot;data&quot;, buf);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;post();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            memcpy(packet-&gt;data(), mInBuffer.c_str() + 2, packetSize);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            packet-&gt;meta()-&gt;setInt64(&quot;arrivalTimeUs&quot;, nowUs);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            notify-&gt;setInt32(&quot;sessionID&quot;, mSessionID);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            notify-&gt;setInt32(&quot;reason&quot;, kWhatDatagram);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            notify-&gt;setBuffer(&quot;data&quot;, packet);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            notify-&gt;post();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;setInt32(&quot;sessionID&quot;, mSessionID);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;setInt32(&quot;reason&quot;, kWhatBinaryData);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;setInt32(&quot;channel&quot;, mInBuffer.c_str()[1]);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                memcpy(data-&gt;data(), mInBuffer.c_str() + 4, length);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                data-&gt;meta()-&gt;setInt64(&quot;arrivalTimeUs&quot;, nowUs);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;setBuffer(&quot;data&quot;, data);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                notify-&gt;post();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            notify-&gt;setInt32(&quot;sessionID&quot;, mSessionID);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            notify-&gt;setInt32(&quot;reason&quot;, kWhatData);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            notify-&gt;setObject(&quot;data&quot;, msg);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            notify-&gt;post();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            const char *content = msg-&gt;getContent();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                n = send(mSocket, datagram-&gt;data(), datagram-&gt;size(), 0);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            n = send(mSocket, frag.mBuffer-&gt;data(), frag.mBuffer-&gt;size(), 0);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        frag.mBuffer-&gt;setRange(
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                frag.mBuffer-&gt;offset() + n, frag.mBuffer-&gt;size() - n);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        if (frag.mBuffer-&gt;size() &gt; 0) {
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            sp&lt;AMessage&gt; msg = mNotify-&gt;dup();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            msg-&gt;setInt32(&quot;sessionID&quot;, mSessionID);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            msg-&gt;setInt32(&quot;reason&quot;, kWhatNetworkStall);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            msg-&gt;setSize(&quot;numBytesQueued&quot;, numBytesQueued);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            msg-&gt;post();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        buffer-&gt;data()[0] = size &gt;&gt; 8;
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        buffer-&gt;data()[1] = size &amp; 0xff;
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        memcpy(buffer-&gt;data() + 2, data, size);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        memcpy(buffer-&gt;data(), data, size);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    sp&lt;AMessage&gt; msg = mNotify-&gt;dup();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    msg-&gt;setInt32(&quot;sessionID&quot;, mSessionID);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    msg-&gt;setInt32(&quot;reason&quot;, kWhatError);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    msg-&gt;setInt32(&quot;send&quot;, send);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    msg-&gt;setInt32(&quot;err&quot;, err);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    msg-&gt;setString(&quot;detail&quot;, detail);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    msg-&gt;post();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    sp&lt;AMessage&gt; msg = mNotify-&gt;dup();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    msg-&gt;setInt32(&quot;sessionID&quot;, mSessionID);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    msg-&gt;setInt32(&quot;reason&quot;, reason);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    msg-&gt;post();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    status_t err = mThread-&gt;run(&quot;ANetworkSession&quot;, ANDROID_PRIORITY_AUDIO);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    mThread-&gt;requestExit();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    mThread-&gt;requestExitAndWait();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        addr.sin_addr.s_addr = *(in_addr_t *)ent-&gt;h_addr;
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                    remoteAddr.sin_addr.s_addr = *(in_addr_t *)ent-&gt;h_addr;
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        session-&gt;setIsRTSPConnection(false);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        session-&gt;setIsRTSPConnection(true);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    mSessions.add(session-&gt;sessionID(), session);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    *sessionID = session-&gt;sessionID();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    int s = session-&gt;socket();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        remoteAddr.sin_addr.s_addr = *(in_addr_t *)ent-&gt;h_addr;
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    status_t err = session-&gt;sendRequest(data, size, timeValid, timeUs);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            int s = session-&gt;socket();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            if (session-&gt;wantsToRead()) {
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            if (session-&gt;wantsToWrite()) {
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            int s = session-&gt;socket();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                if (session-&gt;isRTSPServer() || session-&gt;isTCPDatagramServer()) {
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                                        session-&gt;getNotificationMessage());
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                            clientSession-&gt;setIsRTSPConnection(
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                                    session-&gt;isRTSPServer());
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                    status_t err = session-&gt;readMore();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                status_t err = session-&gt;writeMore();
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            mSessions.add(session-&gt;sessionID(), session);
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            ALOGI(&quot;added clientSession %d&quot;, session-&gt;sessionID());
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(mInputFormat-&gt;findString(&quot;mime&quot;, &amp;mime));
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (accessUnit-&gt;meta()-&gt;findPointer(&quot;mediaBuffer&quot;, &amp;mbuf)
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        accessUnit-&gt;meta()-&gt;setPointer(&quot;mediaBuffer&quot;, NULL);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        static_cast&lt;MediaBuffer *&gt;(mbuf)-&gt;release();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mEncoder-&gt;release();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    (new AMessage(kWhatShutdown, id()))-&gt;post();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(mInputFormat-&gt;findString(&quot;mime&quot;, &amp;inputMIME));
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mOutputFormat = mInputFormat-&gt;dup();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mOutputFormat-&gt;setString(&quot;mime&quot;, outputMIME.c_str());
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat-&gt;setInt32(&quot;bitrate&quot;, audioBitrate);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat-&gt;setInt32(&quot;bitrate&quot;, videoBitrate);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat-&gt;setInt32(&quot;bitrate-mode&quot;, OMX_Video_ControlRateConstant);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat-&gt;setInt32(&quot;frame-rate&quot;, 30);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat-&gt;setInt32(&quot;i-frame-interval&quot;, 15);  // Iframes every 15 secs
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat-&gt;setInt32(&quot;intra-refresh-mode&quot;, OMX_VIDEO_IntraRefreshCyclic);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if (!mOutputFormat-&gt;findInt32(&quot;width&quot;, &amp;width)
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                || !mOutputFormat-&gt;findInt32(&quot;height&quot;, &amp;height)) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat-&gt;setInt32(&quot;intra-refresh-CIR-mbs&quot;, mbs);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    ALOGV(&quot;output format is &#39;%s&#39;&quot;, mOutputFormat-&gt;debugString(0).c_str());
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        sp&lt;AMessage&gt; tmp = mOutputFormat-&gt;dup();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        tmp-&gt;setInt32(&quot;prepend-sps-pps-to-idr-frames&quot;, 1);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        err = mEncoder-&gt;configure(
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        err = mEncoder-&gt;configure(
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = mEncoder-&gt;start();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = mEncoder-&gt;getInputBuffers(&amp;mEncoderInputBuffers);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    return mEncoder-&gt;getOutputBuffers(&amp;mEncoderOutputBuffers);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt32(&quot;what&quot;, kWhatError);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt32(&quot;err&quot;, err);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;post();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    const uint8_t *ptr = accessUnit-&gt;data();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    const uint8_t *end = ptr + accessUnit-&gt;size();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    switch (msg-&gt;what()) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;what&quot;, &amp;what));
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                      msg-&gt;debugString().c_str());
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    CHECK(msg-&gt;findBuffer(&quot;accessUnit&quot;, &amp;accessUnit));
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK(msg-&gt;findBuffer(&quot;accessUnit&quot;, &amp;accessUnit));
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                if (accessUnit-&gt;meta()-&gt;findPointer(&quot;mediaBuffer&quot;, &amp;mbuf)
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            if (msg-&gt;findInt64(&quot;whenUs&quot;, &amp;whenUs)) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mEncoder-&gt;requestIDRFrame();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(mInputFormat-&gt;findString(&quot;mime&quot;, &amp;mime));
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mEncoder-&gt;requestActivityNotification(mEncoderActivityNotify-&gt;dup());
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt64(&quot;whenUs&quot;, ALooper::GetNowUs());
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mEncoder-&gt;requestActivityNotification(notify);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        int16_t *ptr = (int16_t *)buffer-&gt;data();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        int16_t *stop = (int16_t *)(buffer-&gt;data() + buffer-&gt;size());
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                - mPartialAudioAU-&gt;size() + 4;
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            size_t copy = buffer-&gt;size();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            memcpy(mPartialAudioAU-&gt;data() + mPartialAudioAU-&gt;size(),
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                   buffer-&gt;data(),
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mPartialAudioAU-&gt;setRange(0, mPartialAudioAU-&gt;size() + copy);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            buffer-&gt;setRange(buffer-&gt;offset() + copy, buffer-&gt;size() - copy);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(buffer-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            buffer-&gt;meta()-&gt;setInt64(&quot;timeUs&quot;, timeUs);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setInt32(&quot;what&quot;, kWhatAccessUnit);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setBuffer(&quot;accessUnit&quot;, mPartialAudioAU);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;post();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        while (buffer-&gt;size() &gt; 0) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            uint8_t *ptr = partialAudioAU-&gt;data();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            size_t copy = buffer-&gt;size();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            if (copy &gt; partialAudioAU-&gt;size() - 4) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                copy = partialAudioAU-&gt;size() - 4;
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            memcpy(&amp;ptr[4], buffer-&gt;data(), copy);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            partialAudioAU-&gt;setRange(0, 4 + copy);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            buffer-&gt;setRange(buffer-&gt;offset() + copy, buffer-&gt;size() - copy);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(buffer-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            partialAudioAU-&gt;meta()-&gt;setInt64(&quot;timeUs&quot;, timeUs);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            buffer-&gt;meta()-&gt;setInt64(&quot;timeUs&quot;, timeUs);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            if (copy == partialAudioAU-&gt;capacity() - 4) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setInt32(&quot;what&quot;, kWhatAccessUnit);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setBuffer(&quot;accessUnit&quot;, partialAudioAU);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;post();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(buffer-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            memcpy(mEncoderInputBuffers.itemAt(bufferIndex)-&gt;data(),
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                   buffer-&gt;data(),
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                   buffer-&gt;size());
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            if (buffer-&gt;meta()-&gt;findPointer(&quot;mediaBuffer&quot;, &amp;mediaBuffer)
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mEncoderInputBuffers.itemAt(bufferIndex)-&gt;meta()
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    -&gt;setPointer(&quot;mediaBuffer&quot;, mediaBuffer);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                buffer-&gt;meta()-&gt;setPointer(&quot;mediaBuffer&quot;, NULL);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        status_t err = mEncoder-&gt;queueInputBuffer(
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                bufferIndex, 0, (buffer == NULL) ? 0 : buffer-&gt;size(),
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        err = mEncoder-&gt;dequeueInputBuffer(&amp;bufferIndex);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        err = mEncoder-&gt;dequeueOutputBuffer(
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mEncoder-&gt;getOutputBuffers(&amp;mEncoderOutputBuffers);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            notify-&gt;setInt32(&quot;what&quot;, kWhatEOS);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            notify-&gt;post();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            buffer-&gt;meta()-&gt;setInt64(&quot;timeUs&quot;, timeUs);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            memcpy(buffer-&gt;data(),
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                   mEncoderOutputBuffers.itemAt(bufferIndex)-&gt;base() + offset,
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mOutputFormat-&gt;setBuffer(&quot;csd-0&quot;, buffer);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setInt32(&quot;what&quot;, kWhatAccessUnit);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setBuffer(&quot;accessUnit&quot;, buffer);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;post();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mEncoder-&gt;releaseOutputBuffer(bufferIndex);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    (new AMessage(kWhatRequestIDRFrame, id()))-&gt;post();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    (new AMessage(kWhatDropAFrame, id()))-&gt;post();
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        params-&gt;setInt32(&quot;videoBitrate&quot;, bitRate);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mEncoder-&gt;setParameters(params);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp&lt;MetaData&gt; meta = source-&gt;getFormat();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(meta-&gt;findCString(kKeyMIMEType, &amp;mime));
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = msg-&gt;postAndAwaitResponse(&amp;response);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!response-&gt;findInt32(&quot;err&quot;, &amp;err)) {
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;setMessage(&quot;notify&quot;, notify);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;post();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    (new AMessage(kWhatPause, id()))-&gt;post();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    (new AMessage(kWhatResume, id()))-&gt;post();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    switch (msg-&gt;what()) {
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                params-&gt;setInt64(kKeyTime, 1ll);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                err = mSource-&gt;start(params.get());
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                err = mSource-&gt;start();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            response-&gt;setInt32(&quot;err&quot;, err);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;senderAwaitsResponse(&amp;replyID));
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            response-&gt;postReply(replyID);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            sp&lt;MetaData&gt; meta = mSource-&gt;getFormat();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(meta-&gt;findCString(kKeyMIMEType, &amp;tmp));
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mSource-&gt;stop();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findMessage(&quot;notify&quot;, &amp;notify));
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            notify-&gt;post();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;generation&quot;, &amp;generation));
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            status_t err = mSource-&gt;read(&amp;mbuf);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mbuf-&gt;release();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setInt32(&quot;what&quot;, kWhatEOS);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;post();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK(mbuf-&gt;meta_data()-&gt;findInt64(kKeyTime, &amp;timeUs));
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                sp&lt;ABuffer&gt; accessUnit = new ABuffer(mbuf-&gt;range_length());
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                memcpy(accessUnit-&gt;data(),
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                       (const uint8_t *)mbuf-&gt;data() + mbuf-&gt;range_offset(),
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                       mbuf-&gt;range_length());
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                accessUnit-&gt;meta()-&gt;setInt64(&quot;timeUs&quot;, timeUs);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mbuf-&gt;release();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    accessUnit-&gt;meta()-&gt;setPointer(&quot;mediaBuffer&quot;, mbuf);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setInt32(&quot;what&quot;, kWhatAccessUnit);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setBuffer(&quot;accessUnit&quot;, accessUnit);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;post();
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;setInt32(&quot;generation&quot;, mPullGeneration);
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;post();
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    CHECK(format-&gt;findString(&quot;mime&quot;, &amp;mime));
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                mTSPacketizer-&gt;addTrack(info-&gt;mFormat);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            info-&gt;mPacketizerTrackIndex = packetizerTrackIndex;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            notify-&gt;setInt32(&quot;generation&quot;, mGeneration);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            looper()-&gt;registerHandler(mTSSender);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            err = mTSSender-&gt;initAsync(
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                looper()-&gt;unregisterHandler(mTSSender-&gt;id());
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                info-&gt;mPacketizerTrackIndex = -1;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    if (info-&gt;mSender != NULL) {
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;setInt32(&quot;generation&quot;, mGeneration);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;setSize(&quot;trackIndex&quot;, trackIndex);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    info-&gt;mSender = new RTPSender(mNetSession, notify);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    looper()-&gt;registerHandler(info-&gt;mSender);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    status_t err = info-&gt;mSender-&gt;initAsync(
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        looper()-&gt;unregisterHandler(info-&gt;mSender-&gt;id());
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        info-&gt;mSender.clear();
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        info-&gt;mAccessUnits.push_back(accessUnit);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        mTSPacketizer-&gt;extractCSDIfNecessary(info-&gt;mPacketizerTrackIndex);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                CHECK(accessUnit-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            sp&lt;ABuffer&gt; accessUnit = *info-&gt;mAccessUnits.begin();
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            info-&gt;mAccessUnits.erase(info-&gt;mAccessUnits.begin());
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                    fwrite(tsPackets-&gt;data(), 1, tsPackets-&gt;size(), mLogFile);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                CHECK(accessUnit-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                tsPackets-&gt;meta()-&gt;setInt64(&quot;timeUs&quot;, timeUs);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                err = mTSSender-&gt;queueBuffer(
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    return info-&gt;mSender-&gt;queueBuffer(
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            info-&gt;mIsAudio ? 96 : 97 /* packetType */,
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            info-&gt;mIsAudio
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    switch (msg-&gt;what()) {
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            CHECK(msg-&gt;findInt32(&quot;generation&quot;, &amp;generation));
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    CHECK(msg-&gt;findInt32(&quot;what&quot;, &amp;what));
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            CHECK(msg-&gt;findInt32(&quot;err&quot;, &amp;err));
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            CHECK(msg-&gt;findInt32(&quot;err&quot;, &amp;err));
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            CHECK(msg-&gt;findSize(&quot;numBytesQueued&quot;, &amp;numBytesQueued));
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;setInt32(&quot;what&quot;, kWhatInitDone);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;setInt32(&quot;err&quot;, err);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;post();
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;setInt32(&quot;what&quot;, kWhatError);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;setInt32(&quot;err&quot;, err);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;post();
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;setInt32(&quot;what&quot;, kWhatNetworkStall);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;setSize(&quot;numBytesQueued&quot;, numBytesQueued);
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    notify-&gt;post();
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            accessUnit = mTSPacketizer-&gt;prependCSD(
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        status_t err = mHDCP-&gt;encrypt(
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                accessUnit-&gt;data(), accessUnit-&gt;size(),
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                accessUnit-&gt;data());
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    mTSPacketizer-&gt;packetize(
+Parameters.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    status_t err = params-&gt;parse(data, size);
+Parameters.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        value-&gt;clear();
+ParsedMessage.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    ssize_t res = msg-&gt;parse(data, size, noMoreData);
+ParsedMessage.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        value-&gt;clear();
+ParsedMessage.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    field-&gt;setTo(line, prevOffset, offset - prevOffset - 1);
+ParsedMessage.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    value-&gt;clear();
+ParsedMessage.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            value-&gt;setTo(&amp;s[keyLen + 1], len - keyLen - 1);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mIsAudio(IsAudioFormat(mConverter-&gt;getOutputFormat())),
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(format-&gt;findString(&quot;mime&quot;, &amp;mime));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    return mFormat != NULL ? mFormat : mConverter-&gt;getOutputFormat();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        err = mMediaPuller-&gt;start();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mConverter-&gt;shutdownAsync();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mRepeaterSource-&gt;wakeUp();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mMediaPuller-&gt;stopAsync(msg);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        msg-&gt;post();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mMediaPuller-&gt;pause();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mMediaPuller-&gt;resume();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    switch (msg-&gt;what()) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            notify-&gt;setInt32(&quot;what&quot;, kWhatStopped);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            notify-&gt;post();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mRepeaterSource-&gt;wakeUp();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mConverter-&gt;requestIDRFrame();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(outputBuffer-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, timeUs));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    looper()-&gt;registerHandler(mMediaSender);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mMediaSender-&gt;setHDCP(mHDCP);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        err = mMediaSender-&gt;initAsync(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        looper()-&gt;unregisterHandler(mMediaSender-&gt;id());
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    (new AMessage(kWhatResume, id()))-&gt;post();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        CHECK_EQ((status_t)OK, mTracks.editValueAt(i)-&gt;start());
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt32(&quot;what&quot;, kWhatSessionEstablished);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;post();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    (new AMessage(kWhatPause, id()))-&gt;post();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mTracks.valueAt(i)-&gt;stopAsync();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    switch (msg-&gt;what()) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                      msg-&gt;debugString().c_str());
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;what&quot;, &amp;what));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findSize(&quot;trackIndex&quot;, &amp;trackIndex));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK(msg-&gt;findBuffer(&quot;accessUnit&quot;, &amp;accessUnit));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                status_t err = mMediaSender-&gt;queueAccessUnit(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        track-&gt;mediaSenderTrackIndex(),
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mTracks.valueAt(index)-&gt;converter();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                looper()-&gt;unregisterHandler(converter-&gt;id());
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK(msg-&gt;findInt32(&quot;err&quot;, &amp;err));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;what&quot;, &amp;what));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK(msg-&gt;findInt32(&quot;err&quot;, &amp;err));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK(msg-&gt;findSize(&quot;numBytesQueued&quot;, &amp;numBytesQueued));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    sp&lt;Converter&gt; converter = videoTrack-&gt;converter();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        converter-&gt;dropAFrame();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;what&quot;, &amp;what));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findSize(&quot;trackIndex&quot;, &amp;trackIndex));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                looper()-&gt;unregisterHandler(track-&gt;id());
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                looper()-&gt;unregisterHandler(mMediaSender-&gt;id());
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;setInt32(&quot;what&quot;, kWhatSessionDestroyed);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                notify-&gt;post();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mTracks.editValueAt(i)-&gt;pause();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mTracks.editValueAt(i)-&gt;resume();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;generation&quot;, &amp;generation));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mExtractor-&gt;setDataSource(mMediaPath.c_str());
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    size_t n = mExtractor-&gt;countTracks();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        err = mExtractor-&gt;getTrackFormat(i, &amp;format);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        CHECK(format-&gt;findString(&quot;mime&quot;, &amp;mime));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        err = mExtractor-&gt;selectTrack(i);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        notify-&gt;setSize(&quot;trackIndex&quot;, trackIndex);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        looper()-&gt;registerHandler(track);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mMediaSender-&gt;addTrack(format, flags);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        track-&gt;setMediaSenderTrackIndex(mediaSenderTrackIndex);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mExtractor-&gt;getSampleTime(&amp;sampleTimeUs);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;setInt32(&quot;generation&quot;, mPullExtractorGeneration);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;post(whenUs - nowUs);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mExtractor-&gt;readSampleData(accessUnit);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK_EQ((status_t)OK, mExtractor-&gt;getSampleTime(&amp;timeUs));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    accessUnit-&gt;meta()-&gt;setInt64(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK_EQ((status_t)OK, mExtractor-&gt;getSampleTrackIndex(&amp;trackIndex));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;setSize(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;setInt32(&quot;what&quot;, Converter::kWhatAccessUnit);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;setBuffer(&quot;accessUnit&quot;, accessUnit);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;post();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mExtractor-&gt;advance();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    pullLooper-&gt;setName(&quot;pull_looper&quot;);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    pullLooper-&gt;start(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    codecLooper-&gt;setName(&quot;codec_looper&quot;);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    codecLooper-&gt;start(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = convertMetaDataToMessage(source-&gt;getFormat(), &amp;format);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        format-&gt;setInt32(&quot;store-metadata-in-buffers&quot;, true);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        format-&gt;setInt32(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setSize(&quot;trackIndex&quot;, trackIndex);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = converter-&gt;initCheck();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    looper()-&gt;registerHandler(converter);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify = new AMessage(Converter::kWhatMediaPullerNotify, converter-&gt;id());
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setSize(&quot;trackIndex&quot;, trackIndex);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    pullLooper-&gt;registerHandler(puller);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        *numInputBuffers = converter-&gt;getInputBufferCount();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setSize(&quot;trackIndex&quot;, trackIndex);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        track-&gt;setRepeaterSource(static_cast&lt;RepeaterSource *&gt;(source.get()));
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    looper()-&gt;registerHandler(track);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (converter-&gt;needToManuallyPrependSPSPPS()) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mMediaSender-&gt;addTrack(converter-&gt;getOutputFormat(), flags);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    track-&gt;setMediaSenderTrackIndex(mediaSenderTrackIndex);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    source-&gt;setUseAbsoluteTimestamps();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = source-&gt;setMaxAcquiredBufferCount(numInputBuffers);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mBufferQueue = source-&gt;getBufferQueue();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (audioSource-&gt;initCheck() == OK) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        track-&gt;requestIDRFrame();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt32(&quot;what&quot;, kWhatSessionDead);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;post();
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mSource-&gt;start(params);
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mLooper-&gt;setName(&quot;repeater_looper&quot;);
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mLooper-&gt;start();
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mLooper-&gt;registerHandler(mReflector);
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mLooper-&gt;stop();
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mBuffer-&gt;release();
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mSource-&gt;stop();
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    return mSource-&gt;getFormat();
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(options == NULL || !options-&gt;getSeekTo(&amp;seekTimeUs, &amp;seekMode));
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mBuffer-&gt;add_ref();
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                (*buffer)-&gt;meta_data()-&gt;setInt64(kKeyTime, bufferTimeUs);
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    (new AMessage(kWhatRead, mReflector-&gt;id()))-&gt;post();
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    switch (msg-&gt;what()) {
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            status_t err = mSource-&gt;read(&amp;buffer);
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mBuffer-&gt;release();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        mNetSession-&gt;destroySession(mRTCPSessionID);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        mNetSession-&gt;destroySession(mRTPSessionID);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            err = mNetSession-&gt;createUDPSession(
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            err = mNetSession-&gt;createTCPDatagramSession(
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            err = mNetSession-&gt;createUDPSession(
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            err = mNetSession-&gt;createTCPDatagramSession(
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        mNetSession-&gt;destroySession(mRTPSessionID);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    CHECK_LE(packet-&gt;size(), kMaxUDPPacketSize - 12);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    CHECK(packet-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    sp&lt;ABuffer&gt; udpPacket = new ABuffer(12 + packet-&gt;size());
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    udpPacket-&gt;setInt32Data(mRTPSeqNo);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    uint8_t *rtp = udpPacket-&gt;data();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    memcpy(&amp;rtp[12], packet-&gt;data(), packet-&gt;size());
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    CHECK_EQ(0, tsPackets-&gt;size() % 188);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    CHECK(tsPackets-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    const size_t numTSPackets = tsPackets-&gt;size() / 188;
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    while (srcOffset &lt; tsPackets-&gt;size()) {
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        udpPacket-&gt;setInt32Data(mRTPSeqNo);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        uint8_t *rtp = udpPacket-&gt;data();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        size_t numTSPackets = (tsPackets-&gt;size() - srcOffset) / 188;
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        memcpy(&amp;rtp[12], tsPackets-&gt;data() + srcOffset, numTSPackets * 188);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        udpPacket-&gt;setRange(0, 12 + numTSPackets * 188);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        bool isLastPacket = (srcOffset == tsPackets-&gt;size());
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    CHECK(accessUnit-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    const uint8_t *data = accessUnit-&gt;data();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    size_t size = accessUnit-&gt;size();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        if (outBytesUsed + bytesNeeded &gt; out-&gt;capacity()) {
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):                    &amp;&amp; outBytesUsed + nalSize &lt;= out-&gt;capacity()) {
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):                memcpy(out-&gt;data() + outBytesUsed, nalStart, nalSize);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):                out-&gt;setRange(0, outBytesUsed);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        if (outBytesUsed + bytesNeeded &lt;= out-&gt;capacity()) {
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            uint8_t *dst = out-&gt;data() + outBytesUsed;
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            size_t copy = out-&gt;capacity() - outBytesUsed - 2;
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            uint8_t *dst = out-&gt;data() + outBytesUsed;
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            out-&gt;setRange(0, outBytesUsed + copy + 2);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        out-&gt;setRange(0, outBytesUsed);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        out-&gt;setInt32Data(mRTPSeqNo);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):        uint8_t *dst = out-&gt;data();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    status_t err = mNetSession-&gt;sendRequest(
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            mRTPSessionID, buffer-&gt;data(), buffer-&gt;size(),
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    mLastRTPTime = U32_AT(buffer-&gt;data() + 4);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    mNumRTPOctetsSent += buffer-&gt;size() - 12;
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    switch (msg-&gt;what()) {
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            onNetNotify(msg-&gt;what() == kWhatRTPNotify, msg);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    CHECK(msg-&gt;findInt32(&quot;reason&quot;, &amp;reason));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            CHECK(msg-&gt;findInt32(&quot;sessionID&quot;, &amp;sessionID));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            CHECK(msg-&gt;findInt32(&quot;err&quot;, &amp;err));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            CHECK(msg-&gt;findInt32(&quot;send&quot;, &amp;errorOccuredDuringSend));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            CHECK(msg-&gt;findString(&quot;detail&quot;, &amp;detail));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            mNetSession-&gt;destroySession(sessionID);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            CHECK(msg-&gt;findBuffer(&quot;data&quot;, &amp;data));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            CHECK(msg-&gt;findInt32(&quot;sessionID&quot;, &amp;sessionID));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            CHECK(msg-&gt;findSize(&quot;numBytesQueued&quot;, &amp;numBytesQueued));
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    const uint8_t *data = buffer-&gt;data();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    size_t size = buffer-&gt;size();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):            uint16_t bufferSeqNo = buffer-&gt;int32Data() &amp; 0xffff;
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):                int32_t earliest = (*mHistory.begin())-&gt;int32Data() &amp; 0xffff;
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):                int32_t latest = (*--mHistory.end())-&gt;int32Data() &amp; 0xffff;
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    notify-&gt;setInt32(&quot;what&quot;, kWhatInitDone);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    notify-&gt;setInt32(&quot;err&quot;, err);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    notify-&gt;post();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    notify-&gt;setInt32(&quot;what&quot;, kWhatError);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    notify-&gt;setInt32(&quot;err&quot;, err);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    notify-&gt;post();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    notify-&gt;setInt32(&quot;what&quot;, kWhatNetworkStall);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    notify-&gt;setSize(&quot;numBytesQueued&quot;, numBytesQueued);
+RTPSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)\rtp):    notify-&gt;post();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(format-&gt;findString(&quot;mime&quot;, &amp;mMIME));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            if (!mFormat-&gt;findBuffer(StringPrintf(&quot;csd-%d&quot;, i).c_str(), &amp;csd)) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            if (!mFormat-&gt;findInt32(&quot;is-adts&quot;, &amp;isADTS) || isADTS == 0) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        size += mCSD.itemAt(i)-&gt;size();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp&lt;ABuffer&gt; dup = new ABuffer(accessUnit-&gt;size() + size);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        memcpy(dup-&gt;data() + offset, csd-&gt;data(), csd-&gt;size());
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        offset += csd-&gt;size();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    memcpy(dup-&gt;data() + offset, accessUnit-&gt;data(), accessUnit-&gt;size());
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    const uint8_t *codec_specific_data = mCSD.itemAt(0)-&gt;data();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    const uint32_t aac_frame_length = accessUnit-&gt;size() + 7;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    uint8_t *ptr = dup-&gt;data();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    memcpy(ptr, accessUnit-&gt;data(), accessUnit-&gt;size());
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            uint8_t *data = descriptor-&gt;data();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(!memcmp(&quot;\x00\x00\x00\x01&quot;, sps-&gt;data(), 4));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK_GE(sps-&gt;size(), 7u);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            memcpy(&amp;data[2], sps-&gt;data() + 4, 3);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            uint8_t *data = descriptor-&gt;data();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        CHECK(mFormat-&gt;findInt32(&quot;channel-count&quot;, &amp;channelCount));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        CHECK(mFormat-&gt;findInt32(&quot;sample-rate&quot;, &amp;sampleRate));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        uint8_t *data = descriptor-&gt;data();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        uint8_t *data = descriptor-&gt;data();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(format-&gt;findString(&quot;mime&quot;, &amp;mime));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if (track-&gt;streamType() == streamType) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if ((isAudio &amp;&amp; track-&gt;isAudio()) || (isVideo &amp;&amp; track-&gt;isVideo())) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    track-&gt;extractCSDIfNecessary();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(accessUnit-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    packets-&gt;clear();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (track-&gt;isH264() &amp;&amp; (flags &amp; PREPEND_SPS_PPS_TO_IDR_FRAMES)
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        accessUnit = track-&gt;prependCSD(accessUnit);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    } else if (track-&gt;isAAC() &amp;&amp; track-&gt;lacksADTSHeader()) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        accessUnit = track-&gt;prependADTSHeader(accessUnit);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    size_t PES_packet_length = accessUnit-&gt;size() + 8 + numStuffingBytes;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        size_t numBytesOfPayload = accessUnit-&gt;size();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        size_t numBytesOfPayloadRemaining = accessUnit-&gt;size() - numBytesOfPayload;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    uint8_t *packetDataStart = buffer-&gt;data();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            program_info_length += mProgramInfoDescriptors.itemAt(i)-&gt;size();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            memcpy(ptr, desc-&gt;data(), desc-&gt;size());
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            ptr += desc-&gt;size();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            track-&gt;finalize();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            *ptr++ = track-&gt;streamType();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            *ptr++ = 0xe0 | (track-&gt;PID() &gt;&gt; 8);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            *ptr++ = track-&gt;PID() &amp; 0xff;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            for (size_t i = 0; i &lt; track-&gt;countDescriptors(); ++i) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                ES_info_length += track-&gt;descriptorAt(i)-&gt;size();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            for (size_t i = 0; i &lt; track-&gt;countDescriptors(); ++i) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                const sp&lt;ABuffer&gt; &amp;descriptor = track-&gt;descriptorAt(i);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                memcpy(ptr, descriptor-&gt;data(), descriptor-&gt;size());
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                ptr += descriptor-&gt;size();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        CHECK(track-&gt;isVideo());
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    size_t copy = accessUnit-&gt;size();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    *ptr++ = 0x40 | (track-&gt;PID() &gt;&gt; 8);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    *ptr++ = track-&gt;PID() &amp; 0xff;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                | track-&gt;incrementContinuityCounter();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    *ptr++ = track-&gt;streamID();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    memcpy(ptr, accessUnit-&gt;data(), copy);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    while (offset &lt; accessUnit-&gt;size()) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        size_t copy = accessUnit-&gt;size() - offset;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        *ptr++ = 0x00 | (track-&gt;PID() &gt;&gt; 8);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        *ptr++ = track-&gt;PID() &amp; 0xff;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    | track-&gt;incrementContinuityCounter();
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        memcpy(ptr, accessUnit-&gt;data() + offset, copy);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(packetDataStart == buffer-&gt;data() + buffer-&gt;capacity());
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(track-&gt;isH264() &amp;&amp; IsIDR(accessUnit));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(accessUnit-&gt;meta()-&gt;findInt64(&quot;timeUs&quot;, &amp;timeUs));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp&lt;ABuffer&gt; accessUnit2 = track-&gt;prependCSD(accessUnit);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    accessUnit2-&gt;meta()-&gt;setInt64(&quot;timeUs&quot;, timeUs);
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    if (config-&gt;width == 0) {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        *width = config-&gt;width;
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        *height = config-&gt;height;
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        *framesPerSecond = config-&gt;framesPerSecond;
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        *interlaced = config-&gt;interlaced;
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    CHECK_EQ(mComposerClient-&gt;initCheck(), (status_t)OK);
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        mDisplayBinder = mComposerClient-&gt;createDisplay(
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        mComposerClient-&gt;setDisplaySurface(mDisplayBinder, mSurfaceTexture);
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        mComposerClient-&gt;setDisplayProjection(
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    sp&lt;IBinder&gt; binder = sm-&gt;getService(String16(&quot;media.player&quot;));
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    sp&lt;IRemoteDisplay&gt; display = service-&gt;listenForRemoteDisplay(client, iface);
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    client-&gt;waitUntilDone();
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    display-&gt;dispose();
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    session-&gt;start();
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    looper-&gt;start();
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    looper-&gt;registerHandler(source);
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    CHECK_EQ((status_t)OK, source-&gt;start(iface.c_str()));
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    client-&gt;waitUntilDone();
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    source-&gt;stop();
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    ProcessState::self()-&gt;startThreadPool();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = msg-&gt;postAndAwaitResponse(response);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (response == NULL || !(*response)-&gt;findInt32(&quot;err&quot;, &amp;err)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;setString(&quot;iface&quot;, iface);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    switch (msg-&gt;what()) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;senderAwaitsResponse(&amp;replyID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findString(&quot;iface&quot;, &amp;iface));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    err = mNetSession-&gt;createRTSPServer(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            response-&gt;setInt32(&quot;err&quot;, err);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            response-&gt;postReply(replyID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;reason&quot;, &amp;reason));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    CHECK(msg-&gt;findInt32(&quot;sessionID&quot;, &amp;sessionID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    CHECK(msg-&gt;findInt32(&quot;err&quot;, &amp;err));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    CHECK(msg-&gt;findString(&quot;detail&quot;, &amp;detail));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mNetSession-&gt;destroySession(sessionID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        mClient-&gt;onDisplayError(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    CHECK(msg-&gt;findInt32(&quot;sessionID&quot;, &amp;sessionID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        mNetSession-&gt;destroySession(sessionID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    CHECK(msg-&gt;findString(&quot;client-ip&quot;, &amp;mClientInfo.mRemoteIP));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    CHECK(msg-&gt;findString(&quot;server-ip&quot;, &amp;mClientInfo.mLocalIP));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        mNetSession-&gt;destroySession(sessionID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    CHECK(msg-&gt;findInt32(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        mClient-&gt;onDisplayError(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;senderAwaitsResponse(&amp;mStopReplyID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    (new AMessage(kWhatTeardownTriggerTimedOut, id()))-&gt;post(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;senderAwaitsResponse(&amp;replyID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            response-&gt;setInt32(&quot;err&quot;, err);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            response-&gt;postReply(replyID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;senderAwaitsResponse(&amp;replyID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            response-&gt;setInt32(&quot;err&quot;, err);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            response-&gt;postReply(replyID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            if (mClientInfo.mPlaybackSession-&gt;getLastLifesignUs()
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mNetSession-&gt;destroySession(mClientSessionID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mClient-&gt;onDisplayError(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;playbackSessionID&quot;, &amp;playbackSessionID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;what&quot;, &amp;what));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mClient-&gt;onDisplayError(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        mClient-&gt;onDisplayConnected(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        mClient-&gt;onDisplayConnected(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                                    -&gt;getSurfaceTexture(),
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK(msg-&gt;findInt32(&quot;channel&quot;, &amp;channel));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK(msg-&gt;findBuffer(&quot;data&quot;, &amp;data));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK_LE(data-&gt;size(), 0xffffu);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                CHECK(msg-&gt;findInt32(&quot;sessionID&quot;, &amp;sessionID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                header[2] = data-&gt;size() &gt;&gt; 8;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                header[3] = data-&gt;size() &amp; 0xff;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mNetSession-&gt;sendRequest(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mNetSession-&gt;sendRequest(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        sessionID, data-&gt;data(), data-&gt;size());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;sessionID&quot;, &amp;sessionID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;msg&quot;, &amp;msgCode));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;ext1&quot;, &amp;ext1));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(msg-&gt;findInt32(&quot;ext2&quot;, &amp;ext2));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    (new AMessage(kWhatFinishStop2, id()))-&gt;post(300000ll);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mClient-&gt;onDisplayError(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mNetSession-&gt;sendRequest(sessionID, request.c_str(), request.size());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mNetSession-&gt;sendRequest(sessionID, request.c_str(), request.size());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mNetSession-&gt;sendRequest(sessionID, request.c_str(), request.size());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mNetSession-&gt;sendRequest(sessionID, request.c_str(), request.size());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mNetSession-&gt;sendRequest(sessionID, request.c_str(), request.size());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!msg-&gt;getStatusCode(&amp;statusCode)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!msg-&gt;getStatusCode(&amp;statusCode)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        Parameters::Parse(msg-&gt;getContent(), strlen(msg-&gt;getContent()));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!params-&gt;findParameter(&quot;wfd_client_rtp_ports&quot;, &amp;value)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!params-&gt;findParameter(&quot;wfd_video_formats&quot;, &amp;value)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!params-&gt;findParameter(&quot;wfd_audio_codecs&quot;, &amp;value)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!params-&gt;findParameter(&quot;wfd_content_protection&quot;, &amp;value)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!msg-&gt;getStatusCode(&amp;statusCode)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!msg-&gt;getStatusCode(&amp;statusCode)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mClientInfo.mPlaybackSession-&gt;updateLiveness();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    (new AMessage(kWhatReapDeadClients, id()))-&gt;post(kReaperIntervalUs);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;setInt32(&quot;sessionID&quot;, sessionID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    msg-&gt;post(kPlaybackSessionTimeoutUs - 5000000ll);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(msg-&gt;findInt32(&quot;sessionID&quot;, &amp;sessionID));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(msg-&gt;findObject(&quot;data&quot;, &amp;obj));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):          sessionID, data-&gt;debugString().c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    data-&gt;getRequestField(0, &amp;method);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!data-&gt;findInt32(&quot;cseq&quot;, &amp;cseq)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        status_t err = (this-&gt;*func)(sessionID, data);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    data-&gt;getRequestField(2, &amp;version);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        playbackSession-&gt;updateLiveness();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mNetSession-&gt;sendRequest(sessionID, response.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!data-&gt;findString(&quot;transport&quot;, &amp;transport)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt32(&quot;playbackSessionID&quot;, playbackSessionID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt32(&quot;sessionID&quot;, sessionID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    looper()-&gt;registerHandler(playbackSession);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    data-&gt;getRequestField(1, &amp;uri);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = playbackSession-&gt;init(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        looper()-&gt;unregisterHandler(playbackSession-&gt;id());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        int32_t serverRtp = playbackSession-&gt;getRTPPort();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = mNetSession-&gt;sendRequest(sessionID, response.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mNetSession-&gt;sendRequest(sessionID, response.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = playbackSession-&gt;play();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = playbackSession-&gt;pause();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = mNetSession-&gt;sendRequest(sessionID, response.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mNetSession-&gt;sendRequest(sessionID, response.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mClient-&gt;onDisplayError(IRemoteDisplayClient::kDisplayErrorUnknown);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP-&gt;shutdownAsync();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP-&gt;setObserver(NULL);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mNetSession-&gt;destroySession(mSessionID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    response-&gt;setInt32(&quot;err&quot;, err);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    response-&gt;postReply(mStopReplyID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    playbackSession-&gt;updateLiveness();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mNetSession-&gt;sendRequest(sessionID, response.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (strstr(data-&gt;getContent(), &quot;wfd_idr_request\r\n&quot;)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        playbackSession-&gt;requestIDRFrame();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    playbackSession-&gt;updateLiveness();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mNetSession-&gt;sendRequest(sessionID, response.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    response-&gt;append(&quot;Date: &quot;);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    response-&gt;append(buf);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    response-&gt;append(&quot;\r\n&quot;);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    response-&gt;append(StringPrintf(&quot;Server: %s\r\n&quot;, sUserAgent.c_str()));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        response-&gt;append(StringPrintf(&quot;CSeq: %d\r\n&quot;, cseq));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        response-&gt;append(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mNetSession-&gt;sendRequest(sessionID, response.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!data-&gt;findInt32(&quot;session&quot;, playbackSessionID)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mClientInfo.mPlaybackSession-&gt;destroyAsync();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        looper()-&gt;unregisterHandler(mClientInfo.mPlaybackSession-&gt;id());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mNetSession-&gt;destroySession(mClientSessionID);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mClient-&gt;onDisplayDisconnected();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp&lt;AMessage&gt; notify = mNotify-&gt;dup();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt32(&quot;msg&quot;, msg);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt32(&quot;ext1&quot;, ext1);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;setInt32(&quot;ext2&quot;, ext2);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    notify-&gt;post();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp&lt;IBinder&gt; binder = sm-&gt;getService(String16(&quot;media.player&quot;));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mHDCP = service-&gt;makeHDCP(true /* createEncryptionModule */);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mHDCP-&gt;setObserver(mHDCPObserver);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = mHDCP-&gt;initAsync(mClientInfo.mRemoteIP.c_str(), mHDCPPort);
+---- parseH264Codec Matches (3 in 2 files) ----
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):bool VideoFormats::parseH264Codec(const char *spec) {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        parseH264Codec(spec + offset);
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):    bool parseH264Codec(const char *spec);
+---- parseH264Codec Matches (3 in 2 files) ----
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):bool VideoFormats::parseH264Codec(const char *spec) {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        parseH264Codec(spec + offset);
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):    bool parseH264Codec(const char *spec);
+---- mConfigs Matches (11 in 2 files) ----
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):VideoFormats::config_t VideoFormats::mConfigs[][32] = {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            mConfigs[i][j].profile = mConfigs[i][j].level = 0;
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            mConfigs[i][j].profile = (1ul << PROFILE_CBP);
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            mConfigs[i][j].level = (1ul << LEVEL_31);
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    const config_t *config = &mConfigs[type][index];
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                if (profile > mConfigs[i][j].profile) {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                    mConfigs[i][j].profile = profile;
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                    if (level > mConfigs[i][j].level)
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):                        mConfigs[i][j].level = level;
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):    static config_t mConfigs[kNumResolutionTypes][32];
+---- RESOLUTION_HH Matches (1 in 1 files) ----
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):        RESOLUTION_HH,
+---- RESOLUTION_VESA Matches (1 in 1 files) ----
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):        RESOLUTION_VESA,
+---- RESOLUTION_CEA Matches (3 in 3 files) ----
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    setNativeResolution(RESOLUTION_CEA, 0);  // default to 640x480 p60
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):        RESOLUTION_CEA,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            VideoFormats::RESOLUTION_CEA, 5);  // 1280x720 p30
+---- VideoFormats() Matches (2 in 2 files) ----
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):VideoFormats::VideoFormats() {
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):    VideoFormats();
+---- wfd_video_formats Matches (6 in 2 files) ----
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    // wfd_video_formats:
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        "wfd_video_formats\r\n"
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        body.append("wfd_video_formats: ");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!params->findParameter("wfd_video_formats", &value)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGE("Sink doesn&#39;t report its choice of wfd_video_formats.");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            ALOGE("Failed to parse sink provided wfd_video_formats (%s)",
+---- xxx Matches (6 in 5 files) ----
+ANetworkSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            // XXX The (old) dongle sends the wrong content length header on a
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            // XXX Determine proper HDCP version.
+TSPacketizer.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    // XXX to be removed once encoder config option takes care of this for
+Wfd.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        Rect layerStackRect(1280, 720);  // XXX fix this.
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    // The older LG dongles doesn&#39;t specify client_port=xxx apparently.
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        // XXX the older dongles do not always include a "Session:" header.
+---- video Matches (195 in 13 files) ----
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):#include <OMX_Video.h>
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mIsVideo(false),
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      ,mPrevVideoBitrate(-1)
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!strncasecmp("video/", mime.c_str(), 6)) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mIsVideo = true;
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(!usePCMAudio || !mIsVideo);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    } else if (!strcasecmp(inputMIME.c_str(), MEDIA_MIMETYPE_VIDEO_RAW)) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        outputMIME = MEDIA_MIMETYPE_VIDEO_AVC;
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    int32_t videoBitrate = GetInt32Property("media.wfd.video-bitrate", 5000000);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mPrevVideoBitrate = videoBitrate;
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    ALOGI("using audio bitrate of %d bps, video bitrate of %d bps",
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):          audioBitrate, videoBitrate);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat->setInt32("bitrate", videoBitrate);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat->setInt32("bitrate-mode", OMX_Video_ControlRateConstant);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mOutputFormat->setInt32("intra-refresh-mode", OMX_VIDEO_IntraRefreshCyclic);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        // completely update a whole video frame. If the frame rate is 30,
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        // to automatically prepend SPS/PPS in the case of video.
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                if (mIsVideo && mNumFramesToDrop) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                if (!mIsVideo) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                      mIsVideo ? "video" : "audio", nowUs - whenUs);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            if (mIsVideo) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            ALOGI("shutting down %s encoder", mIsVideo ? "video" : "audio");
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                  mIsVideo ? "video" : "audio", timeUs, timeUs / 1E6);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):int32_t Converter::getVideoBitrate() const {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    return mPrevVideoBitrate;
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):void Converter::setVideoBitrate(int32_t bitRate) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mIsVideo && mEncoder != NULL && bitRate != mPrevVideoBitrate) {
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        params->setInt32("videoBitrate", bitRate);
+Converter.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mPrevVideoBitrate = bitRate;
+Converter.h (c:\users\wxh\desktop\新建文件夹 (2)\source):// Right now this&#39;ll convert raw video into H.264 and raw audio into AAC.
+Converter.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    int32_t getVideoBitrate() const;
+Converter.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    void setVideoBitrate(int32_t bitrate);
+Converter.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    bool mIsVideo;
+Converter.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    int32_t mPrevVideoBitrate;
+MediaPuller.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    // video encoder will release MediaBuffer when done
+MediaSender.h (c:\users\wxh\desktop\新建文件夹 (2)):// Optionally the (video) data is encrypted using the provided hdcp object.
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):#if SUSPEND_VIDEO_IF_IDLE
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            ALOGI("kWhatStopped %s posted", mIsAudio ? "audio" : "video");
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):#if SUSPEND_VIDEO_IF_IDLE
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mVideoTrackIndex(-1),
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        bool enableVideo,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        VideoFormats::ResolutionType videoResolutionType,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        size_t videoResolutionIndex) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            enableVideo,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            videoResolutionType,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            videoResolutionIndex);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                if (mVideoTrackIndex >= 0) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    const sp<Track> &videoTrack =
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        mTracks.valueFor(mVideoTrackIndex);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    sp<Converter> converter = videoTrack->converter();
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        bool enableAudio, bool enableVideo) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    bool haveVideo = false;
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        bool isVideo = !strncasecmp(mime.c_str(), "video/", 6);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        } else if (isVideo && enableVideo && !haveVideo) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            haveVideo = true;
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if (isVideo) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mVideoTrackIndex = trackIndex;
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if ((haveAudio || !enableAudio) && (haveVideo || !enableVideo)) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        bool enableVideo,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        VideoFormats::ResolutionType videoResolutionType,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        size_t videoResolutionIndex) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(enableAudio || enableVideo);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        return setupMediaPacketizer(enableAudio, enableVideo);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (enableVideo) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        status_t err = addVideoSource(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                videoResolutionType, videoResolutionIndex);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        bool isVideo, const sp<MediaSource> &source, bool isRepeaterSource,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(!usePCMAudio || !isVideo);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(!isRepeaterSource || isVideo);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (isVideo) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGE("%s converter returned err %d", isVideo ? "video" : "audio", err);
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (isVideo) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mVideoTrackIndex = trackIndex;
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):status_t WifiDisplaySource::PlaybackSession::addVideoSource(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        VideoFormats::ResolutionType videoResolutionType,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        size_t videoResolutionIndex) {
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    CHECK(VideoFormats::GetConfiguration(
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                videoResolutionType,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                videoResolutionIndex,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp<RepeaterSource> videoSource =
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            true /* isVideo */, videoSource, true /* isRepeaterSource */,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                false /* isVideo */, audioSource, false /* isRepeaterSource */,
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):#include "VideoFormats.h"
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            bool enableVideo,
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            VideoFormats::ResolutionType videoResolutionType,
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            size_t videoResolutionIndex);
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    ssize_t mVideoTrackIndex;
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t setupMediaPacketizer(bool enableAudio, bool enableVideo);
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            bool enableVideo,
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            VideoFormats::ResolutionType videoResolutionType,
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            size_t videoResolutionIndex);
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            bool isVideo,
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t addVideoSource(
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            VideoFormats::ResolutionType videoResolutionType,
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            size_t videoResolutionIndex);
+RepeaterSource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):#if SUSPEND_VIDEO_IF_IDLE
+RepeaterSource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):#define SUSPEND_VIDEO_IF_IDLE   0
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    bool isVideo() const;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!strcasecmp(mMIME.c_str(), MEDIA_MIMETYPE_VIDEO_AVC)
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):bool TSPacketizer::Track::isVideo() const {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    return !strncasecmp("video/", mMIME.c_str(), 6);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    return !strcasecmp(mMIME.c_str(), MEDIA_MIMETYPE_VIDEO_AVC);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            // AVC video descriptor (40)
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    bool isVideo = !strncasecmp("video/", mime.c_str(), 6);
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (isVideo) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!strcasecmp(mime.c_str(), MEDIA_MIMETYPE_VIDEO_AVC)) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if ((isAudio && track->isAudio()) || (isVideo && track->isVideo())) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        // This really should only happen for video.
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        CHECK(track->isVideo());
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        // It&#39;s valid to set this to 0 for video according to the specs.
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head><title>media/libstagefright/wifi-display/VideoFormats.cpp - platform/frameworks/av - Git at Google</title><link rel="stylesheet" type="text/css" href="//www.google.com/css/go.css" /><link rel="stylesheet" type="text/css" href="/+static/prettify/prettify.vf-M93Ay4IiiWRQSJKPGWQ.cache.css" /><link rel="stylesheet" type="text/css" href="/+static/gitiles.JPyDgEz4Jj5aQRFU8GjJJQ.cache.css" /><script src="/+static/prettify/prettify_compiled.wQKdUVM0AfatEiTiXCI6lw.cache.js" type="text/javascript"></script></head><body onload="prettyPrint()"><h1><img src="//www.google.com/images/logo_sm.gif" alt="Google" />Git</h1><div class="menu"> <a href="https://www.google.com/accounts/ServiceLogin?service=gerritcodereview&continue=https://android.googlesource.com/login/platform/frameworks/av/%2B/android-4.3_r0.9/media/libstagefright/wifi-display/VideoFormats.cpp">Sign in</a> </div><div class="breadcrumbs"><a href="/?format=HTML">android</a> / <a href="/platform/frameworks/av/">platform/frameworks/av</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9">android-4.3_r0.9</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9/">.</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9/media">media</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9/media/libstagefright">libstagefright</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9/media/libstagefright/wifi-display">wifi-display</a> / VideoFormats.cpp</div><div class="sha1">blob: 458b1633d899c76d495c5ea118ef5ae287b7758f [<a href="/platform/frameworks/av/+log/android-4.3_r0.9/media/libstagefright/wifi-display/VideoFormats.cpp">file history</a>]</div><pre class="git-blob prettyprint linenums lang-cpp">/*
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):#define LOG_TAG "VideoFormats"
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):#include "VideoFormats.h"
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):VideoFormats::config_t VideoFormats::mConfigs[][32] = {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):VideoFormats::VideoFormats() {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):void VideoFormats::setNativeResolution(ResolutionType type, size_t index) {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):void VideoFormats::getNativeResolution(
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):void VideoFormats::disableAll() {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):void VideoFormats::enableAll() {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):void VideoFormats::setResolutionEnabled(
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):bool VideoFormats::isResolutionEnabled(
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):bool VideoFormats::GetConfiguration(
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):bool VideoFormats::parseH264Codec(const char *spec) {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):bool VideoFormats::parseFormatSpec(const char *spec) {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):AString VideoFormats::getFormatSpec(bool forM4Message) const {
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    // wfd_video_formats:
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):bool VideoFormats::PickBestFormat(
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        const VideoFormats &sinkSupported,
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        const VideoFormats &sourceSupported,
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head><title>media/libstagefright/wifi-display/VideoFormats.h - platform/frameworks/av - Git at Google</title><link rel="stylesheet" type="text/css" href="//www.google.com/css/go.css" /><link rel="stylesheet" type="text/css" href="/+static/prettify/prettify.vf-M93Ay4IiiWRQSJKPGWQ.cache.css" /><link rel="stylesheet" type="text/css" href="/+static/gitiles.JPyDgEz4Jj5aQRFU8GjJJQ.cache.css" /><script src="/+static/prettify/prettify_compiled.wQKdUVM0AfatEiTiXCI6lw.cache.js" type="text/javascript"></script></head><body onload="prettyPrint()"><h1><img src="//www.google.com/images/logo_sm.gif" alt="Google" />Git</h1><div class="menu"> <a href="https://www.google.com/accounts/ServiceLogin?service=gerritcodereview&continue=https://android.googlesource.com/login/platform/frameworks/av/%2B/android-4.3_r0.9/media/libstagefright/wifi-display/VideoFormats.h">Sign in</a> </div><div class="breadcrumbs"><a href="/?format=HTML">android</a> / <a href="/platform/frameworks/av/">platform/frameworks/av</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9">android-4.3_r0.9</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9/">.</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9/media">media</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9/media/libstagefright">libstagefright</a> / <a href="/platform/frameworks/av/+/android-4.3_r0.9/media/libstagefright/wifi-display">wifi-display</a> / VideoFormats.h</div><div class="sha1">blob: 01de24638d8d93a66f6b613b163025c3c06455dc [<a href="/platform/frameworks/av/+log/android-4.3_r0.9/media/libstagefright/wifi-display/VideoFormats.h">file history</a>]</div><pre class="git-blob prettyprint linenums lang-h">/*
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):#ifndef VIDEO_FORMATS_H_
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):#define VIDEO_FORMATS_H_
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):// This class encapsulates that video resolution capabilities of a wfd source
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):struct VideoFormats {
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):    VideoFormats();
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):            const VideoFormats &sinkSupported,
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):            const VideoFormats &sourceSupported,
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):    DISALLOW_EVIL_CONSTRUCTORS(VideoFormats);
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):#endif  // VIDEO_FORMATS_H_
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mSupportedSourceVideoFormats.disableAll();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mSupportedSourceVideoFormats.setNativeResolution(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            VideoFormats::RESOLUTION_CEA, 5);  // 1280x720 p30
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    if (!mSinkSupportsVideo) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                        CHECK(VideoFormats::GetConfiguration(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                                    mChosenVideoResolutionType,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                                    mChosenVideoResolutionIndex,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        "wfd_video_formats\r\n"
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mSinkSupportsVideo) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        body.append("wfd_video_formats: ");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        VideoFormats chosenVideoFormat;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        chosenVideoFormat.disableAll();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        chosenVideoFormat.setNativeResolution(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mChosenVideoResolutionType, mChosenVideoResolutionIndex);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        body.append(chosenVideoFormat.getFormatSpec(true /* forM4Message */));
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!params->findParameter("wfd_video_formats", &value)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGE("Sink doesn&#39;t report its choice of wfd_video_formats.");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mSinkSupportsVideo = false;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mSinkSupportsVideo = true;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if (!mSupportedSinkVideoFormats.parseFormatSpec(value.c_str())) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            ALOGE("Failed to parse sink provided wfd_video_formats (%s)",
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if (!VideoFormats::PickBestFormat(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mSupportedSinkVideoFormats,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mSupportedSourceVideoFormats,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    &mChosenVideoResolutionType,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    &mChosenVideoResolutionIndex)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            ALOGE("Sink and source share no commonly supported video "
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        CHECK(VideoFormats::GetConfiguration(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mChosenVideoResolutionType,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mChosenVideoResolutionIndex,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGI("Picked video resolution %u x %u %c%u",
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGI("Sink doesn&#39;t support video at all.");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!mSinkSupportsVideo && !mSinkSupportsAudio) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGE("Sink supports neither video nor audio...");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mSinkSupportsVideo,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mChosenVideoResolutionType,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mChosenVideoResolutionIndex);
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):#include "VideoFormats.h"
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    VideoFormats mSupportedSourceVideoFormats;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    bool mSinkSupportsVideo;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    VideoFormats mSupportedSinkVideoFormats;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    VideoFormats::ResolutionType mChosenVideoResolutionType;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    size_t mChosenVideoResolutionIndex;
+---- wfd_video_formats Matches (6 in 2 files) ----
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    // wfd_video_formats:
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        "wfd_video_formats\r\n"
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        body.append("wfd_video_formats: ");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (!params->findParameter("wfd_video_formats", &value)) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGE("Sink doesn&#39;t report its choice of wfd_video_formats.");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            ALOGE("Failed to parse sink provided wfd_video_formats (%s)",
+---- getFormatSpec Matches (3 in 3 files) ----
+VideoFormats.cpp (c:\users\wxh\desktop\新建文件夹 (2)):AString VideoFormats::getFormatSpec(bool forM4Message) const {
+VideoFormats.h (c:\users\wxh\desktop\新建文件夹 (2)):    AString getFormatSpec(bool forM4Message = false) const;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        body.append(chosenVideoFormat.getFormatSpec(true /* forM4Message */));
+---- hdcp Matches (141 in 8 files) ----
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):#include <media/IHDCP.h>
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):status_t MediaSender::setHDCP(const sp<IHDCP> &hdcp) {
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    mHDCP = hdcp;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        if (mHDCP != NULL) {
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            // XXX Determine proper HDCP version.
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            flags |= TSPacketizer::EMIT_HDCP20_DESCRIPTOR;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    bool isHDCPEncrypted = false;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    uint8_t HDCP_private_data[16];
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    if (mHDCP != NULL && !info.mIsAudio) {
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        isHDCPEncrypted = true;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        status_t err = mHDCP->encrypt(
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            ALOGE("Failed to HDCP-encrypt media data (err %d)",
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[0] = 0x00;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[1] =
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[2] = (trackIndex >> 22) & 0xff;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[3] =
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[4] = (trackIndex >> 7) & 0xff;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[5] =
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[6] = 0x00;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[7] =
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[8] = (inputCTR >> 52) & 0xff;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[9] =
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[10] = (inputCTR >> 37) & 0xff;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[11] =
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[12] = (inputCTR >> 22) & 0xff;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[13] =
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[14] = (inputCTR >> 7) & 0xff;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        HDCP_private_data[15] =
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            !isHDCPEncrypted ? NULL : HDCP_private_data,
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):            !isHDCPEncrypted ? 0 : sizeof(HDCP_private_data),
+MediaSender.h (c:\users\wxh\desktop\新建文件夹 (2)):struct IHDCP;
+MediaSender.h (c:\users\wxh\desktop\新建文件夹 (2)):// Optionally the (video) data is encrypted using the provided hdcp object.
+MediaSender.h (c:\users\wxh\desktop\新建文件夹 (2)):    status_t setHDCP(const sp<IHDCP> &hdcp);
+MediaSender.h (c:\users\wxh\desktop\新建文件夹 (2)):    sp<IHDCP> mHDCP;
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):#include <media/IHDCP.h>
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        const sp<IHDCP> &hdcp,
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mHDCP(hdcp),
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mMediaSender->setHDCP(mHDCP);
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):struct IHDCP;
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):            const sp<IHDCP> &hdcp,
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp<IHDCP> mHDCP;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (flags & (EMIT_HDCP20_DESCRIPTOR | EMIT_HDCP21_DESCRIPTOR)) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        int32_t hdcpVersion;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if (flags & EMIT_HDCP20_DESCRIPTOR) {
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(!(flags & EMIT_HDCP21_DESCRIPTOR));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            hdcpVersion = 0x20;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            CHECK(!(flags & EMIT_HDCP20_DESCRIPTOR));
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            // HDCP2.0 _and_ HDCP 2.1 specs say to set the version
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            // inside the HDCP descriptor to 0x20!!!
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            hdcpVersion = 0x20;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        // HDCP descriptor
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        data[6] = hdcpVersion;
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    // payload) must contain a multiple of 16 bytes of payload per HDCP spec.
+TSPacketizer.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        (mFlags & (EMIT_HDCP20_DESCRIPTOR | EMIT_HDCP21_DESCRIPTOR));
+TSPacketizer.h (c:\users\wxh\desktop\新建文件夹 (2)\source):        EMIT_HDCP20_DESCRIPTOR = 1,
+TSPacketizer.h (c:\users\wxh\desktop\新建文件夹 (2)\source):        EMIT_HDCP21_DESCRIPTOR = 2,
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):#include <media/IHDCP.h>
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mUsingHDCP(false),
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mIsHDCP2_0(false),
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mHDCPPort(0),
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mHDCPInitializationComplete(false),
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                                mUsingHDCP
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                                mUsingHDCP
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        case kWhatHDCPNotify:
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            ALOGI("Saw HDCP notification code %d, ext1 %d, ext2 %d",
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                case HDCPModule::HDCP_INITIALIZATION_COMPLETE:
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mHDCPInitializationComplete = true;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                case HDCPModule::HDCP_SHUTDOWN_COMPLETE:
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                case HDCPModule::HDCP_SHUTDOWN_FAILED:
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    // HDCPObserver::notify is completely handled before
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    // we clear the HDCP instance and unload the shared
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    ALOGE("HDCP failure, shutting down.");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mUsingHDCP = false;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mUsingHDCP = true;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        bool isHDCP2_0 = false;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        if (value.startsWith("HDCP2.0 ")) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            isHDCP2_0 = true;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        } else if (!value.startsWith("HDCP2.1 ")) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        int32_t hdcpPort;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    value.c_str() + 8, "port", &hdcpPort)
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                || hdcpPort < 1 || hdcpPort > 65535) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mIsHDCP2_0 = isHDCP2_0;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCPPort = hdcpPort;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        status_t err = makeHDCP();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            ALOGE("Unable to instantiate HDCP component. "
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                  "Not using HDCP after all.");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mUsingHDCP = false;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mUsingHDCP && !mHDCPInitializationComplete) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGI("Deferring SETUP trigger until HDCP initialization completes.");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mNetSession, notify, mInterfaceAddr, mHDCP, mMediaPath.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mHDCP != NULL) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGI("Initiating HDCP shutdown.");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP->shutdownAsync();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mHDCP != NULL) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP->setObserver(NULL);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCPObserver.clear();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP.clear();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):struct WifiDisplaySource::HDCPObserver : public BnHDCPObserver {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    HDCPObserver(const sp<AMessage> &notify);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    DISALLOW_EVIL_CONSTRUCTORS(HDCPObserver);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):WifiDisplaySource::HDCPObserver::HDCPObserver(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):void WifiDisplaySource::HDCPObserver::notify(
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):status_t WifiDisplaySource::makeHDCP() {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mHDCP = service->makeHDCP(true /* createEncryptionModule */);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mHDCP == NULL) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp<AMessage> notify = new AMessage(kWhatHDCPNotify, id());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mHDCPObserver = new HDCPObserver(notify);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mHDCP->setObserver(mHDCPObserver);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        ALOGE("Failed to set HDCP observer.");
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCPObserver.clear();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP.clear();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    ALOGI("Initiating HDCP negotiation w/ host %s:%d",
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mClientInfo.mRemoteIP.c_str(), mHDCPPort);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = mHDCP->initAsync(mClientInfo.mRemoteIP.c_str(), mHDCPPort);
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):struct IHDCP;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    struct HDCPObserver;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):        kWhatHDCPNotify,
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    // HDCP specific section >>>>
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    bool mUsingHDCP;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    bool mIsHDCP2_0;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    int32_t mHDCPPort;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp<IHDCP> mHDCP;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp<HDCPObserver> mHDCPObserver;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    bool mHDCPInitializationComplete;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t makeHDCP();
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    // <<<< HDCP specific section
+---- mHDCPPort Matches (5 in 2 files) ----
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mHDCPPort(0),
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCPPort = hdcpPort;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mClientInfo.mRemoteIP.c_str(), mHDCPPort);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = mHDCP->initAsync(mClientInfo.mRemoteIP.c_str(), mHDCPPort);
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    int32_t mHDCPPort;
+---- mHDCP Matches (34 in 6 files) ----
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    mHDCP = hdcp;
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        if (mHDCP != NULL) {
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):    if (mHDCP != NULL && !info.mIsAudio) {
+MediaSender.cpp (c:\users\wxh\desktop\新建文件夹 (2)):        status_t err = mHDCP->encrypt(
+MediaSender.h (c:\users\wxh\desktop\新建文件夹 (2)):    sp<IHDCP> mHDCP;
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mHDCP(hdcp),
+PlaybackSession.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mMediaSender->setHDCP(mHDCP);
+PlaybackSession.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp<IHDCP> mHDCP;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mHDCPPort(0),
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):      mHDCPInitializationComplete(false),
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                    mHDCPInitializationComplete = true;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCPPort = hdcpPort;
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mUsingHDCP && !mHDCPInitializationComplete) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):                mNetSession, notify, mInterfaceAddr, mHDCP, mMediaPath.c_str());
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mHDCP != NULL) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP->shutdownAsync();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mHDCP != NULL) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP->setObserver(NULL);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCPObserver.clear();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP.clear();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mHDCP = service->makeHDCP(true /* createEncryptionModule */);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    if (mHDCP == NULL) {
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    mHDCPObserver = new HDCPObserver(notify);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    status_t err = mHDCP->setObserver(mHDCPObserver);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCPObserver.clear();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):        mHDCP.clear();
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):            mClientInfo.mRemoteIP.c_str(), mHDCPPort);
+WifiDisplaySource.cpp (c:\users\wxh\desktop\新建文件夹 (2)\source):    err = mHDCP->initAsync(mClientInfo.mRemoteIP.c_str(), mHDCPPort);
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    int32_t mHDCPPort;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp<IHDCP> mHDCP;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    sp<HDCPObserver> mHDCPObserver;
+WifiDisplaySource.h (c:\users\wxh\desktop\新建文件夹 (2)\source):    bool mHDCPInitializationComplete;
